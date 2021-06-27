@@ -15,7 +15,7 @@ func RandDate(minYear, maxYear int) (day, date string) {
 	delta := max - min
 	sec := rand.Int63n(delta) + min
 	fullDate := time.Unix(sec, 0)
-	day = fullDate.Format("Monday")
-	date = fullDate.Format("02-Jan-2006")
+	day = string(fullDate.Format("Monday"))
+	date = string(fullDate.Format("02-Jan-2006"))
 	return day, date
 }
