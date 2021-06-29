@@ -11,7 +11,7 @@ func RandDate(minYear, maxYear int) (day, date string) {
 		maxYear = 2200
 	}
 	min := time.Date(minYear, 1, 0, 0, 0, 0, 0, time.UTC).Unix()
-	max := time.Date(minYear, 1, 0, 0, 0, 0, 0, time.UTC).Unix()
+	max := time.Date(maxYear, 1, 0, 0, 0, 0, 0, time.UTC).Unix()
 	delta := max - min
 	sec := rand.Int63n(delta) + min
 	fullDate := time.Unix(sec, 0)
